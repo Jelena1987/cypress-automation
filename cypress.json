@@ -1,3 +1,7 @@
 {
-    "baseUrl":"https://gallery-app.vivifyideas.com"
+    "baseUrl":"https://gallery-app.vivifyideas.com",
+    "env": {
+        "EXTERNAL_EMAIL": "todorovic87jelena@gmail.com",
+        "EXTERNAL_PASSWORD": "2005makstanja"
+    }
 }

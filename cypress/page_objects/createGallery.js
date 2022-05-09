@@ -23,11 +23,11 @@ class CreateGallery {
     }
 
     get addImageButton() {
-        return cy.get('button').contains('Add image').eq(0)
+        return cy.get('button[type="button"]').eq(2)
     }
 
     get trashBtn() {
-        return cy.get('.fa-trash')
+        return cy.get('button[type="button"]').eq(0);
 
     }
     get imageInputParent() {
@@ -44,18 +44,43 @@ class CreateGallery {
         return cy.get('button[type="submit"]').contains('Submit');
     }
 
+    get logoutBtn() {
+        return cy.get ("a[class='nav-link nav-buttons']").eq(1)
+    }
+
     
 
     createGallery(title, description, image) {
         this.titleInput.type(title)
         this.descriptionInput.type(description)
         this.imageUrlInput.type(image)
+        this.submitBtn.click()
+
+    }
+
+    imageCreateGallery(title, description, image) {
+        this.titleInput.type(title)
+        this.descriptionInput.type(description)
+        this.imageUrlInput.type(image)
         this.addImageButton.click()
         this.imageInputParent.type(image)
-        //this.submitBtn.click()
-        
+        this.submitBtn.click()
 
-        }
+    }
+
+    cancelCreateGallery(title, description, image) {
+        this.titleInput.type(title)
+        this.descriptionInput.type(description)
+        this.imageUrlInput.type(image)
+        this.cancelBtn.click()
+
+    }
+
+    logoutCreateGallery(logout) {
+        this.logoutBtn.click()
+    }
+
 }
+
 
 export const createGallery = new CreateGallery();
