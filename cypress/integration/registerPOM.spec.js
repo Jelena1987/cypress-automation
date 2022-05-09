@@ -7,7 +7,7 @@ describe ('registration POM', () => {
     let registerData = {
         firstName:faker.name.firstName(),
         lastName: faker.name.lastName (),
-        email: faker.internet.email(),
+        email: faker.internet.email (),
         password: faker.internet.password(20, true, /[A-Z]/, '888')
                 
     }
@@ -16,8 +16,7 @@ describe ('registration POM', () => {
         cy.visit('/register');
         cy.url().should('include', '/register')
     })
-    
-    
+
     it ('register with valid data', () => {
         registerPage.register(
         registerData.firstName,
@@ -27,6 +26,9 @@ describe ('registration POM', () => {
 
         )
         
+    })
        
     })
-})
+       
+
+

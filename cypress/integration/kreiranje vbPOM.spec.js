@@ -20,14 +20,9 @@ describe('createGallery POM', () => {
         cy.url().should('include', '/create')
     })
 
-    it('create gallery with valid data', () => {
-        createGalleryPage.createGallery(
-            createGalleryData.title,
-            createGalleryData.description,
-            createGalleryData.image,
+    
            
-           
-        )
+        
     })
 
-})    
+
